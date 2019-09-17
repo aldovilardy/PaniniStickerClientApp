@@ -46,6 +46,7 @@ namespace PaniniStickerClientApp.Views
 
         private async void TakePhoto_Clicked(object sender, EventArgs e)
         {
+            await CrossMedia.Current.Initialize();
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await DisplayAlert("No Camera", ":( No camera available.", "OK");
