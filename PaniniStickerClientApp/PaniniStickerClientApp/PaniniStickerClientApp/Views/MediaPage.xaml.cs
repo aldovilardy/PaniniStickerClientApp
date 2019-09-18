@@ -46,35 +46,36 @@ namespace PaniniStickerClientApp.Views
 
         private async void TakePhoto_Clicked(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            if (await CrossMedia.Current.Initialize() && CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
+            {
+                MediaFile file = await CrossMedia.Current.TakePhotoAsync(
+                    new StoreCameraMediaOptions
+                    {
+                        Directory = "Test",
+                        SaveToAlbum = true,
+                        CompressionQuality = 75,
+                        CustomPhotoSize = 50,
+                        PhotoSize = PhotoSize.MaxWidthHeight,
+                        MaxWidthHeight = 2000,
+                        DefaultCamera = CameraDevice.Front
+                    });
+
+                if (file == null) return;
+
+                await DisplayAlert("File Location", file.Path, "OK");
+
+                image.Source = ImageSource.FromStream(() =>
+                {
+                    Stream stream = file.GetStream();
+                    file.Dispose();
+                    return stream;
+                });
+            }
+            else
             {
                 await DisplayAlert("No Camera", ":( No camera available.", "OK");
                 return;
             }
-
-            MediaFile file = await CrossMedia.Current.TakePhotoAsync(
-                new StoreCameraMediaOptions
-                {
-                    Directory = "Test",
-                    SaveToAlbum = true,
-                    CompressionQuality = 75,
-                    CustomPhotoSize = 50,
-                    PhotoSize = PhotoSize.MaxWidthHeight,
-                    MaxWidthHeight = 2000,
-                    DefaultCamera = CameraDevice.Front
-                });
-
-            if (file == null) return;
-
-            await DisplayAlert("File Location", file.Path, "OK");
-
-            image.Source = ImageSource.FromStream(() =>
-            {
-                Stream stream = file.GetStream();
-                file.Dispose();
-                return stream;
-            });
         }
     }
 }
