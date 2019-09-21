@@ -22,6 +22,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -164,37 +165,43 @@
                            Grid.Column="0"
                            VerticalOptions="Center"/>
 
-                <Grid Padding="3"
-                      Grid.Row="8"
-                      Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                <FlexLayout Direction="Column"
+                            AlignItems="Center"
+                            JustifyContent="SpaceEvenly"
+                            Grid.Row="8"
+                            Grid.Column="1">
 
-                    <Button x:Name="TakePhoto" 
+                    <Grid Padding="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="TakePhoto" 
                             Text="Take Photo"
                             Command="{Binding TakePhotoCommand}"
                             Grid.Row="0"
                             Grid.Column="0"/>
-                    <Button x:Name="PickPhoto" 
+                        <Button x:Name="PickPhoto" 
                             Command="{Binding PickPhotoCommand}"
                             Text="Pick Photo"
                             Grid.Row="0"
-                           Grid.Column="2"/>
-
+                           Grid.Column="1"/>
+                    </Grid>
                     <Image x:Name="PhotoPreview"
-                           Grid.Row="1"
-                           Grid.Column="1"
-                           Source="{Binding PhotoPreview}"/>
-
-                </Grid>
-
+                           Source="{Binding PhotoPreviewSource}"/>
+                </FlexLayout>                
+                
+                <!--<Button x:Name="GenerateSticker"
+                        Text="Generate Sticker" 
+                        Command="{Binding GenerateSticker}"
+                        Grid.ColumnSpan="3" CornerRadius="25" 
+                        Grid.Row="9"
+                        Grid.Column="1"/>-->
+                
             </Grid>
 
         </ScrollView>
