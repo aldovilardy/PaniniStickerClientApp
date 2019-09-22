@@ -4,8 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:insfra="clr-namespace:PaniniStickerClientApp.Infrastructure"
              x:Class="PaniniStickerClientApp.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <!-- Locator -->
+            <insfra:InstanceLocator x:Key="Locator"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

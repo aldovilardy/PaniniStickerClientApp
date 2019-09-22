@@ -12,7 +12,8 @@ namespace PaniniStickerClientApp
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new MediaPage();
+            //MainPage = new MediaPage();
+            MainPage = new NavigationPage(new FormPage());
         }
 
         protected override void OnStart()
