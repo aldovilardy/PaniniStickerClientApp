@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Form}">
-
+            
             <Grid Padding="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -18,42 +18,43 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>                    
+                    <RowDefinition Height="Auto"/>                    
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-
+                
                 <Label Text="Panini Sticker Client App" 
-                           FontAttributes="Bold" 
-                           Grid.Row="0" 
-                           Grid.Column="0" 
-                           Grid.ColumnSpan="3"
-                           FontSize="Large"/>
-
+                       FontAttributes="Bold" 
+                       Grid.Row="0" 
+                       Grid.Column="0" 
+                       Grid.ColumnSpan="3"
+                       FontSize="Large"/>
+                
                 <Label Text="Xamarin Functionality Proof of Concept" 
-                           FontSize="Medium"
-                           Grid.Row="1" 
-                           Grid.Column="0" 
-                           Grid.ColumnSpan="3"/>
-
+                       FontSize="Medium"
+                       Grid.Row="1" 
+                       Grid.Column="0" 
+                       Grid.ColumnSpan="3"/>
+                
                 <Label Text="Team Frame" 
-                           Grid.Row="2" 
-                           Grid.Column="0" 
-                           Grid.ColumnSpan="3" 
-                           VerticalOptions="Center"/>
-
+                       Grid.Row="2" 
+                       Grid.Column="0" 
+                       Grid.ColumnSpan="3" 
+                       VerticalOptions="Center"/>
+                
                 <Picker x:Name="Frame"
-                            SelectedItem="{Binding Frame}"
-                            Grid.Row="2" 
-                            Grid.Column="1">
+                        SelectedItem="{Binding Frame}"
+                        Grid.Row="2" 
+                        Grid.Column="1">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>NON</x:String>
@@ -92,28 +93,28 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-
+                
                 <Label Text="Full Name" 
-                           Grid.Row="3" 
-                           Grid.Column="0" 
-                           VerticalOptions="Center"/>
-
+                       Grid.Row="3" 
+                       Grid.Column="0" 
+                       VerticalOptions="Center"/>
+                
                 <Entry x:Name="FullName" 
-                           Grid.Row="3" 
-                           Grid.Column="1" 
-                           Grid.ColumnSpan="2"
-                           Placeholder="Name and Lastname of the person or character in the photo"
-                           Text="{Binding FullName}"/>
-
+                       Grid.Row="3" 
+                       Grid.Column="1" 
+                       Grid.ColumnSpan="2"
+                       Placeholder="Name and Lastname of the person or character in the photo"
+                       Text="{Binding FullName}"/>
+                
                 <Label Text="Position" 
-                           Grid.Row="4" 
-                           Grid.Column="0" 
-                           VerticalOptions="Center"/>
-
+                       Grid.Row="4" 
+                       Grid.Column="0" 
+                       VerticalOptions="Center"/>
+                
                 <Picker x:Name="Position"
-                            Grid.Row="4"
-                            Grid.Column="1"
-                            SelectedItem="{Binding Position}">
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        SelectedItem="{Binding Position}">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>None</x:String>
@@ -124,83 +125,83 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-
+                
                 <Label Text="Date of Birthday"
-                           Grid.Row="5"
-                           Grid.Column="0"
-                           VerticalOptions="Center"/>
-
+                       Grid.Row="5"
+                       Grid.Column="0"
+                       VerticalOptions="Center"/>
+                
                 <DatePicker x:Name="DoB"
-                                Grid.Row="5"
-                                Grid.Column="1"
-                                Date="{Binding DoB}"/>
-
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Date="{Binding DoB}"/>
+                
                 <Label Text="Club"
-                           Grid.Row="6"
-                           Grid.Column="0"
-                           VerticalOptions="Center"/>
-
+                       Grid.Row="6"
+                       Grid.Column="0"
+                       VerticalOptions="Center"/>
+                
                 <Entry x:Name="Club"
-                           Placeholder="The club, home town or nickname that you like to write"
-                           Grid.Row="6"
-                           Grid.Column="1"
-                           Grid.ColumnSpan="2"
-                           Text="{Binding Club}"/>
-
+                       Placeholder="The club, home town or nickname that you like to write"
+                       Grid.Row="6"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       Text="{Binding Club}"/>
+                
                 <Label Text="Debut Year"
-                           Grid.Row="7"
-                           Grid.Column="0"
-                           VerticalOptions="Center"/>
-
+                       Grid.Row="7"
+                       Grid.Column="0"
+                       VerticalOptions="Center"/>
+                
                 <Entry x:Name="Debut"
-                           Keyboard="Numeric"
-                           Placeholder="The year of player debut"
-                           MaxLength="4"
-                           Grid.Row="7"
-                           Grid.Column="1"
-                           Text="{Binding Debut}"/>
+                       Keyboard="Numeric"
+                       Placeholder="The year of player debut"
+                       MaxLength="4"
+                       Grid.Row="7"
+                       Grid.Column="1"
+                       Text="{Binding Debut}"/>
 
                 <Label Text="Photo"
-                           Grid.Row="8"
-                           Grid.Column="0"
-                           VerticalOptions="Center"/>
+                       Grid.Row="8"
+                       Grid.Column="0"
+                       VerticalOptions="Center"/>
 
-                <FlexLayout Direction="Column"
-                            AlignItems="Center"
-                            JustifyContent="SpaceEvenly"
-                            Grid.Row="8"
-                            Grid.Column="1">
+                <Grid Padding="3"
+                      Grid.Row="8"
+                      Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-                    <Grid Padding="3">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Button x:Name="TakePhoto" 
+                    <Button x:Name="TakePhoto" 
                             Text="Take Photo"
                             Command="{Binding TakePhotoCommand}"
                             Grid.Row="0"
                             Grid.Column="0"/>
-                        <Button x:Name="PickPhoto" 
+                    <Button x:Name="PickPhoto" 
                             Command="{Binding PickPhotoCommand}"
                             Text="Pick Photo"
                             Grid.Row="0"
-                           Grid.Column="1"/>
-                    </Grid>
+                            Grid.Column="1"/>
+                </Grid>
+
+                <FlexLayout Direction="Column"
+                            AlignItems="Center"
+                            JustifyContent="SpaceEvenly"
+                            Grid.Row="9"
+                            Grid.ColumnSpan="2">
                     <Image x:Name="PhotoPreview"
                            Source="{Binding PhotoPreviewSource}"/>
+                    <BoxView/>
+                    <Button x:Name="GenerateSticker"
+                            Text="Generate Sticker" 
+                            Command="{Binding GenerateStickerCommand}"
+                            Grid.ColumnSpan="3" CornerRadius="25" 
+                            Grid.Row="10"/>
                 </FlexLayout>                
-                
-                <!--<Button x:Name="GenerateSticker"
-                        Text="Generate Sticker" 
-                        Command="{Binding GenerateSticker}"
-                        Grid.ColumnSpan="3" CornerRadius="25" 
-                        Grid.Row="9"
-                        Grid.Column="1"/>-->
                 
             </Grid>
 

@@ -46,7 +46,9 @@ namespace PaniniStickerClientApp.Views
 
         private async void TakePhoto_Clicked(object sender, EventArgs e)
         {
-            if (await CrossMedia.Current.Initialize() && CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
+            if (await CrossMedia.Current.Initialize()
+                && CrossMedia.Current.IsCameraAvailable
+                && CrossMedia.Current.IsTakePhotoSupported)
             {
                 MediaFile file = await CrossMedia.Current.TakePhotoAsync(
                     new StoreCameraMediaOptions
