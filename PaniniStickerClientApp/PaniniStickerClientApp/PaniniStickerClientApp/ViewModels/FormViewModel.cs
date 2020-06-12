@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -124,9 +125,7 @@ namespace PaniniStickerClientApp.ViewModels
             IRestResponse response = client.Execute(request);
             JObject jObjectSticker = JObject.Parse(response.Content);
             Uri stickerImageUri = new Uri((string)jObjectSticker["image"]["url"]);
-
-            PhotoPreviewSource = ImageSource.FromUri(stickerImageUri);          
-
+            PhotoPreviewSource = ImageSource.FromUri(stickerImageUri);
         }
         private string UploadImage(MediaFile file)
         {
